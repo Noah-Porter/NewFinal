@@ -1,10 +1,10 @@
 import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JButton
+import javax.swing.JButton;
 
 public class CustomPanel extends JPanel
 {
-  private JButton sampleButton
+  private JButton sampleButton;
 
   public CustomPanel()
   {
@@ -16,6 +16,7 @@ public class CustomPanel extends JPanel
 
   private void setupPanel()
   {
-    this.setBackground(Color.Magenta);
+    this.setBackground(Color.MAGENTA);
+    this.add(sampleButton);
   }
 }
