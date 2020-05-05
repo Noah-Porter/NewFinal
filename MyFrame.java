@@ -15,7 +15,7 @@ public class MyFrame extends JFrame
   private void setupFrame()
   {
     this.setContentPane(appPanel);
-    this.setSize(500, 500);
+    this.setSize(1000, 1000);
     this.setTitle("Main GUI");
     this.setVisible(true);
   }
