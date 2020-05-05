@@ -7,31 +7,49 @@ import java.awt.event.ActionListener;
 
 public class CustomPanel extends JPanel
 {
-  private JButton firstButton;
+  private JButton sampleButton;
 
   public CustomPanel()
   {
     super();
 
-    firstButton = new JButton("Click me to play trivia");
+    sampleButton = new JButton("Click me ");
     setupPanel();
     setupListeners();
   }
 
   private void setupListeners()
   {
-    firstButton.addActionListeners(new ActionListener()
+    sampleButton.addActionListeners(new ActionListener()
     {
       public void actionPerformed(ActionEvent click)
       {
-        
+        startGame();
       }
     });
   }
 
+  private void startGame()
+  {
+    setBackgroundColor(updateColor);
+
+  }
   private void setupPanel()
   {
-    this.setBackground(Color.MAGENTA);
+    this.setBackground(Color.GREEN);
     this.add(sampleButton);
   }
+
+  private Color updateColor()
+	{
+		Color randomColor = null;
+		
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		
+		randomColor = new Color(red, green, blue);
+		
+		return randomColor;
+	}
 }
