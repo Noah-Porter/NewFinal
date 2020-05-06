@@ -1,4 +1,4 @@
-import Controller.Controller;
+package Model;
 
 import java.util.*;
 

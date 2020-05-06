@@ -7,7 +7,8 @@ import java.util.*;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-import Popup;
+import View.Popup;
+import Model.Words;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,18 +16,22 @@ import java.awt.event.ActionListener;
 public class CustomPanel extends JPanel
 {
   private JButton sampleButton;
-  private Popup view;
 
-  public controller()
-  {
-    view = new Popup();
-    inputScanner = new Scanner(System.in);
-    defaultWords = new Words();
-  }
+  private Popup view;
+  private Words playerOneName;
+  private Words defaultWords;
+  private Words questions;
+  private Scanner inputScanner;
 
   public CustomPanel()
   {
     super();
+
+    view = new Popup();
+    inputScanner = new Scanner(System.in);
+    defaultWords = new Words();
+
+    setup();
 
     sampleButton = new JButton("Click Now");
     setupPanel();
@@ -35,7 +40,7 @@ public class CustomPanel extends JPanel
 
   private void setupListeners()
   {
-    sampleButton.addActionListeners(new ActionListener()
+    sampleButton.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent click)
       {
@@ -44,11 +49,11 @@ public class CustomPanel extends JPanel
     });
   }
 
-  private void startGame()
-  {
-    this.setBackgroundColor(updateColor);
+  // private void startGame()
+  // {
+  //   this.setBackgroundColor(updateColor);
 
-  }
+  // }
   private void setupPanel()
   {
     this.setBackground(Color.GREEN);
