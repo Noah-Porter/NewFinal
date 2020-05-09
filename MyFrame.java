@@ -8,6 +8,7 @@ public class MyFrame extends JFrame
   {
     super();
     
+
     appPanel = new CustomPanel();
     setupFrame();
   }

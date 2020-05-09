@@ -7,9 +7,6 @@ import java.util.*;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-import View.Popup;
-import Model.Words;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,9 +28,8 @@ public class CustomPanel extends JPanel
     inputScanner = new Scanner(System.in);
     defaultWords = new Words();
 
-    setup();
 
-    sampleButton = new JButton("Click Now");
+    sampleButton = new JButton("Click H");
     setupPanel();
     setupListeners();
   }
@@ -45,6 +41,7 @@ public class CustomPanel extends JPanel
       public void actionPerformed(ActionEvent click)
       {
         setup();
+        updateColor();
       }
     });
   }
@@ -74,7 +71,7 @@ public class CustomPanel extends JPanel
 	}
 
 
-    public void setup ()
+  public void setup ()
   {
     view.displayMessage("Let's begin");
 
@@ -93,12 +90,14 @@ public class CustomPanel extends JPanel
     {
       view.displayMessage("Great");
       custom.setPlayerOneName(response);
+      updateColor();
     }
     else
     {
       response = view.askQuestion("What is player one's new name?");
       view.displayMessage("Player one's new name is " + response);
       custom.setPlayerOneName(response);
+      updateColor();
     }
 
     response = view.askQuestion("What is player two's name?");
@@ -107,15 +106,18 @@ public class CustomPanel extends JPanel
     {
       view.displayMessage("Great");
       custom.setPlayerTwoName(response);
+      updateColor();
     }
     else
     {
       response = view.askQuestion("What is player two's new name?");
       view.displayMessage("Player two's new name is " + response);
       custom.setPlayerTwoName(response);
+      updateColor();
     }
 
     view.displayMessage("Let's move on");
+    updateColor();
 
 
 
@@ -126,7 +128,9 @@ public class CustomPanel extends JPanel
 		for (int index = 0; index < questions.length; index ++)
 		{
       response = view.askQuestion("Type a trivia question here");
+      updateColor();
       answer = view.askQuestion("Type your answer here for question: " + response);
+      updateColor();
 
       for (int index2 = 0; index2 < 1; index2 ++)
       {
@@ -136,6 +140,7 @@ public class CustomPanel extends JPanel
         {
           view.displayMessage("Nice job! Now it's  your turn to ask the question.");
           total = total++;
+          updateColor();
         }
         else
         {
@@ -144,10 +149,12 @@ public class CustomPanel extends JPanel
           {
             view.displayMessage("Great! Now it's your turn to ask the question.");
             total = total++;
+            updateColor();
           }
           else
           {
             view.displayMessage("The answer is: " + answer + ". Now it's your turn to ask the question.");
+            updateColor();
           }
         }
       }
