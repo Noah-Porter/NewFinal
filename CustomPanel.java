@@ -169,19 +169,16 @@ public class CustomPanel extends JPanel
       }
     }
 
-            // creating a list of Integers 
-        List<Integer> list = Arrays.asList(reply.length()); 
+      // creating a list of Integers 
+      List<Integer> list = Arrays.asList(reply.length()); 
   
-        // Using count() to count the number 
-        // of elements in the stream and 
-        // storing the result in a variable. 
-        long total1 = list.stream().count(); 
+      // Using count() to count the number 
+      // of elements in the stream and 
+      // storing the result in a variable. 
+      long total1 = list.stream().count(); 
   
-        // Displaying the number of elements 
-        view.displayMessage("The total is " + total1); 
-
-
-
+      // Displaying the number of elements 
+      view.displayMessage("The total is " + total1); 
 
       view.displayMessage("The total correct answers:" + total);
 
