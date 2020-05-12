@@ -2252,3 +2252,4 @@ Failed to read: session.screen0.titlebar.right
 Setting default value
 XIO:  fatal IO error 4 (Interrupted system call) on X server ":0"
       after 16524 requests (16524 known processed) with 1 events remaining.
+PORT=5900
