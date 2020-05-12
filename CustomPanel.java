@@ -13,6 +13,10 @@ import java.awt.event.ActionListener;
 
 public class CustomPanel extends JPanel
 {
+/**
+* Private data members used to create the main methods.
+*/
+
   private SpringLayout appLayout;
   private JButton sampleButton;
   private JButton newButton;
@@ -23,6 +27,10 @@ public class CustomPanel extends JPanel
   private Words questions;
   private Scanner inputScanner;
 
+/**
+* This is the constructor and it is used to call different methods and build them.
+*/
+
   public CustomPanel()
   {
     super();
@@ -32,10 +40,14 @@ public class CustomPanel extends JPanel
     inputScanner = new Scanner(System.in);
     defaultWords = new Words();
 
-    this.sampleButton = new JButton("Click jlakdg;");    
+    this.sampleButton = new JButton("Click me to change colors and begin Trivia");    
     setupPanel();
     setupListeners();
   }
+
+/**
+* setupListeners is used to add button functionality. This one allows the user to change colors and run the game.
+*/
 
   private void setupListeners()
   {
@@ -49,12 +61,20 @@ public class CustomPanel extends JPanel
     });
   }
 
+/**
+* The setupPanel is used for this.add statements to build the panel of the program. It works with the frame to establish boundaries, colors, and functionalities.
+*/
+
   private void setupPanel()
   {
     this.setBackground(Color.GREEN);
     this.add(sampleButton);
     this.setLayout(appLayout);
   }
+
+/**
+* setupLayout is the conditional app layout. it uses constraints and applayout options.
+*/
   
   private void setupLayout()
 	{
@@ -62,10 +82,18 @@ public class CustomPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, sampleButton, -181, SpringLayout.EAST, this);
 	}
 
+/**
+* updateDisplay is used to call the updateColor method.
+*/
+
   private void updateDisplay()
   {
     this.setBackground(updateColor());
   }
+
+/**
+* updateColor calls a random color and builds an algorithm that allows random color selection
+*/
 
   private Color updateColor()
 	{
@@ -80,6 +108,10 @@ public class CustomPanel extends JPanel
 		return randomColor;
 	}
 
+/**
+* This is the main method for the game. It builds the game and calls each section of the game.
+* It defines the game's functionality for the build.
+*/
 
   public void setup ()
   {

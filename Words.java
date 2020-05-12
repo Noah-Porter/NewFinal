@@ -1,9 +1,12 @@
-
-
 import java.util.*;
 
 public class Words
 {
+
+/**
+* Private data members used to create the main methods.
+*/
+
   private String playerOneName;
   private String playerTwoName;
   private String playerOneQuestionOne;
@@ -15,6 +18,9 @@ public class Words
 
   private String [] questionsArray;
 
+/**
+* Words is used to call the this.statements. It's just a basic, predetermined data set.
+*/
 
   public Words()
   {
@@ -27,6 +33,10 @@ public class Words
     this.playerOneQuestionThree = "Hello";
     this.playerTwoQuestionThree = "Hello";
   }
+
+/**
+* Words with parameters is the calling of the previous section, and making it into variables for the customPanel class.
+*/
 
   public Words(String playerOneName, 
   String playerTwoName, String playerOneQuestionOne, 
@@ -44,6 +54,10 @@ public class Words
     this.playerTwoQuestionThree = playerTwoQuestionThree;
   }
 
+/**
+* The questions method is used ask a basic data set for the trivia game.
+*/
+  
 	private void questions()
 	{
 		this.questionsArray[0] = "What country is Utah in?";
@@ -58,7 +72,10 @@ public class Words
 		this.questionsArray[9] = "Would you like to make a play/movie?";
 
 	}
-  
+
+/**
+* The following are the getters and setters for the program.
+*/
 
   public String getPlayerOneName()
   {
