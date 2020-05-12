@@ -1,14 +1,13 @@
-import javax.swing.JPanel;
-import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
-
+import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 
 import java.util.ArrayList;
 import java.util.*;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +15,7 @@ public class CustomPanel extends JPanel
 {
   private SpringLayout appLayout;
   private JButton sampleButton;
+  private JButton newButton;
 
   private Popup view;
   private Words playerOneName;
@@ -27,12 +27,12 @@ public class CustomPanel extends JPanel
   {
     super();
 
+    this.appLayout = new SpringLayout();
     view = new Popup();
     inputScanner = new Scanner(System.in);
     defaultWords = new Words();
 
-
-    sampleButton = new JButton("Click H");
+    this.sampleButton = new JButton("Click jlakdg;");    
     setupPanel();
     setupListeners();
   }
@@ -43,24 +43,25 @@ public class CustomPanel extends JPanel
     {
       public void actionPerformed(ActionEvent click)
       {
-        // setup();
+        setup();
         updateDisplay();
       }
     });
   }
 
-  // private void startGame()
-  // {
-  //   this.setBackgroundColor(updateColor);
-
-  // }
   private void setupPanel()
   {
-    // this.setBackground(Color.GREEN);
+    this.setBackground(Color.GREEN);
     this.add(sampleButton);
     this.setLayout(appLayout);
   }
   
+  private void setupLayout()
+	{
+		appLayout.putConstraint(SpringLayout.NORTH, sampleButton, 131, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, sampleButton, -181, SpringLayout.EAST, this);
+	}
+
   private void updateDisplay()
   {
     this.setBackground(updateColor());
@@ -82,6 +83,8 @@ public class CustomPanel extends JPanel
 
   public void setup ()
   {
+    this.setBackground(Color.BLUE);
+
     view.displayMessage("Let's begin");
 
     Words custom = new Words();
@@ -89,7 +92,6 @@ public class CustomPanel extends JPanel
     String answer = "";
     String reply = "";
     int total = 1;
-
 
     //Player names
 
@@ -127,8 +129,6 @@ public class CustomPanel extends JPanel
 
     view.displayMessage("Let's move on");
     updateDisplay();
-
-
 
     //Questions for the trivia section
 
@@ -182,7 +182,6 @@ public class CustomPanel extends JPanel
 
       view.displayMessage("The total correct answers:" + total);
 
-
       ArrayList<String> userInput = new ArrayList<String>();
 		  String input = view.askQuestion("Write the correct answers to all of the questions (one at a time)");
 		
@@ -196,4 +195,3 @@ public class CustomPanel extends JPanel
 		  + " correct answers. They are: " + userInput);
   }
 }
-
